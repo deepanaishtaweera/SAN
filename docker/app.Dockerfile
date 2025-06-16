@@ -1,4 +1,4 @@
-FROM nvcr.io/nvidia/pytorch:22.08-py3
+FROM mendelxu/pytorch:d2_nvcr_2008
 
 RUN pip install 'git+https://github.com/facebookresearch/detectron2.git'
 RUN pip install cython scipy shapely timm h5py submitit scikit-image wandb setuptools numpy Pillow pycocotools~=2.0.4 fvcore tabulate tqdm ftfy regex open_clip_torch cityscapesscripts tensorboard gradio
