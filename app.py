@@ -5,7 +5,7 @@ import gradio as gr
 # set a lot of global variables
 
 predictor = None
-vocabulary = ["bat man, woman"]
+vocabulary = ['street', 'stairs', 'pedestrian area', 'sidewalk', 'indoor floor', 'gravel', 'wall', 'glass wall', 'vegetation', 'sky', 'vehicle', 'person', 'other']
 input_image: Image.Image = None
 outputs: dict = None
 cur_model_name: str = None

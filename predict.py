@@ -112,7 +112,7 @@ class Predictor(object):
             image_data = image_data_or_path
         w, h = image_data.size
         image_tensor: torch.Tensor = self._preprocess(image_data)
-        vocabulary = list(set([v.lower().strip() for v in vocabulary]))
+        vocabulary = list(dict.fromkeys([v.lower().strip() for v in vocabulary]))
         # remove invalid vocabulary
         vocabulary = [v for v in vocabulary if v != ""]
         print("vocabulary:", vocabulary)
