@@ -8,4 +8,4 @@ uv pip install --no-build-isolation 'git+https://github.com/facebookresearch/det
 docker run -it --gpus all --shm-size 8G -v "$(pwd)/SAN:/app" mendelxu/pytorch:d2_nvcr_2008 /bin/bash
 
 docker build -f docker/app.Dockerfile -t san_app .
-docker run -it --gpus all --shm-size 8G -p 7860:7860 san_app 
+docker run -it --gpus all --shm-size 8G -p 7860:7860 -v "$(pwd):/san" -w /san --user root san_app /bin/bash
