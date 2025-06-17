@@ -18,3 +18,5 @@ regex
 opencv-python
 open_clip_torch==2.16.0
 mmcv==1.3.14
+fastapi
+uvicorn
