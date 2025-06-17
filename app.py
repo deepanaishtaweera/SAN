@@ -52,6 +52,7 @@ def segment_image(vis_mode, voc_mode, model_name):
         input_image, vocabulary=vocabulary, augment_vocabulary=voc_mode
     )
     outputs = result
+    print("outputs", outputs)
 
     return visualize(vis_mode)
 
