@@ -51,26 +51,10 @@ async def segment_image(
             augment_vocabulary=augment_vocabulary
         )
         
-        # Generate visualization
-        vis_image = predictor.visualize(
-            image=input_image,
-            sem_seg=result["sem_seg"],
-            vocabulary=result["vocabulary"],
-            mode=visualization_mode
+        return JSONResponse(
+            status_code=200,
+            content={"status": "success", "result": result}
         )
-        
-        # Convert visualization to base64
-        buffered = io.BytesIO()
-        vis_image.save(buffered, format="PNG")
-        img_str = base64.b64encode(buffered.getvalue()).decode()
-        
-        return JSONResponse({
-            "status": "success",
-            "segmentation": {
-                "vocabulary": result["vocabulary"],
-                "visualization": f"data:image/png;base64,{img_str}"
-            }
-        })
         
     except Exception as e:
         return JSONResponse(
