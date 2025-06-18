@@ -18,7 +18,11 @@ WORKDIR $HOME/app
 
 RUN git checkout deepana/fixes
 
-ENV GRADIO_SERVER_NAME=0.0.0.0
 EXPOSE 7860
-RUN echo "gradio app.py">>run.sh
-CMD ["script","-c","sh run.sh","/dev/null"]
+
+
+# ENV GRADIO_SERVER_NAME=0.0.0.0
+# RUN echo "gradio app.py">>run.sh
+# CMD ["script","-c","sh run.sh","/dev/null"]
+
+CMD ["python", "api.py"]
